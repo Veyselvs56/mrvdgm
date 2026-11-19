@@ -140,7 +140,7 @@
 </div>
 
 <!-- MÜZİK: images klasörünün yanına music.mp3 koyarsan çalar -->
-<audio id="music" src="music.mp3" loop preload="auto"></audio>
+<audio id="music" src="music.mp3" preload="auto"></audio>
 <button id="musicBtn" title="Müzik">🎵</button>
 
 <!-- HERO -->
@@ -281,6 +281,7 @@ document.getElementById('gift').addEventListener('click', () => {
   setInterval(balloon, 2200);
   music.play().catch(()=>{});
 });
+music.addEventListener('ended', () => { musicBtn.textContent = '🔁'; });
 musicBtn.addEventListener('click', () => { if(music.paused){ music.play(); musicBtn.textContent = '🎵'; } else { music.pause(); musicBtn.textContent = '🔇'; } });
 
 /* ======= Pasta ======= */
